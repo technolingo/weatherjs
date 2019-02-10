@@ -11,7 +11,7 @@ export const WEATHER_PROXY_HANDLER = {
     return Reflect.get(target, property);
   },
   set: function (target, property, value) {
-    const celsiusValue = ((value - 32) * 5 / 9).toFixed(2) + ' C';
+    const celsiusValue = ((value - 32) * 5 / 9).toFixed(2) + ' °C';
     return Reflect.set(target, property, celsiusValue);
   }
 }
