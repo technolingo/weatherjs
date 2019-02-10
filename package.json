@@ -1,0 +1,23 @@
+{
+  "name": "weatherjs",
+  "version": "1.0.0",
+  "description": "A Simple Weather App Written in ES6 JavaScript.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technolingo/weatherjs.git"
+  },
+  "author": "Zilong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/technolingo/weatherjs/issues"
+  },
+  "homepage": "https://github.com/technolingo/weatherjs#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
