@@ -1,17 +1,17 @@
-export class WeatherAPIClient {
-  static fetchData (url) {
-    return new Promise((resolve, reject) => {
-      const HTTP = new XMLHttpRequest();
-      HTTP.open('get', url);
-      HTTP.onreadystatechange = () => {
-        if (HTTP.readyState === XMLHttpRequest.DONE && HTTP.status === 200) {
-          const DATA = JSON.parse(HTTP.responseText);
-          resolve(DATA);
-        } else if (HTTP.readyState === XMLHttpRequest.DONE) {
-          reject('Something went wrong.');
-        }
-      };
-      HTTP.send();
-    }); // return
-  } // fecthData
+export class WeatherData {
+  constructor (location, description) {
+    this.location = location;
+    this.description = description;
+    this.temperature = '';
+  }
+}
+
+export const WEATHER_PROXY_HANDLER = {
+  get: function (target, property) {
+    return Reflect.get(target, property);
+  },
+  set: function (target, property, value) {
+    const celsiusValue = ((value - 32) * 5 / 9).toFixed(2) + ' C';
+    return Reflect.set(target, property, celsiusValue);
+  }
 }
